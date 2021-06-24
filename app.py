@@ -1,11 +1,23 @@
-from flask import Flask
+from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy 
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField, SelectField
+from os import getenv
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = '' 
+#configs 
+
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///data.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:Password1234@35.197.222.73:3306/reema"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False 
+
 db = SQLAlchemy(app)
+
+
+app.config ['SECRET KEY'] = getenv ('SKEY')
+
+#direct to main page and about us 
 
 @app.route('/')
 @app.route('/home')
@@ -18,17 +30,6 @@ def about():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-#creatingthetables
-
-
-class Order(db.Model):
-    order_number = db.Column(db.Integer, primary_key=True)
-    product_name = db.Column(db.String(30), db.ForeignKey('product_name'))
-    first_name = db.Column(db.String(30), nullable=False)
-    last_name = db.Column(db.String(30), nullable=False)
-
-class Stock (db.Model):
-    product_id = db.Column(db.Integer, primary_key=True)
-    stock_level = db.Column((db.Integer)
-    price = db.Column((db.Integer)
+    
+    
+  

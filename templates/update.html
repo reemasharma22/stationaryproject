@@ -1,0 +1,28 @@
+{% extends "home.html" %}
+<html>
+    <head>
+        <title>Order form</title>
+    </head>
+    <body>
+    <title>Update form</title>
+    <div class='form'></div>
+    <form method='POST' action=''></form>
+    {{ form.hidden_tag() }}
+                {{ form.first_name.label }} {{ form.first_name }}
+                <br>
+                {{ form.last_name.label }} {{ form.last_name }}
+                <br>
+                {{ form.street.label }} {{ form.street.label }}
+                 <br>
+                {{ form.city.label }}{{ form.city.label }}
+                <br>
+                 {{ form.postcode.label }}{{ form.postcode.label }}
+                <br>
+                {{ form.product.label }}{{ form.product.label }}
+                <br>
+                {{ form.submit }}
+            {{ message }}
+            </form>
+        </div>
+    </body>
+</html>

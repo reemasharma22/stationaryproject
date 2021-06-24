@@ -1,6 +1,6 @@
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///data.db"
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://reema:tempDB47!@35.246.8.157/reema"
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://reema:Password1234@35.197.222.73/projectdb"
 
 from flask import flask 
 
