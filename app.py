@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, SelectField
 from os import getenv
+from stationaryproject import routes
 
 app = Flask(__name__)
 
@@ -13,7 +14,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:Password1234@35.19
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False 
 
 db = SQLAlchemy(app)
-
 
 app.config ['SECRET KEY'] = getenv ('SKEY')
 
@@ -31,5 +31,5 @@ def about():
 if __name__ == "__main__":
     app.run(debug=True)
     
-    
+
   
